@@ -27,11 +27,11 @@ function draw() {
   points.push(new p5.Vector(x, y, z));
 
   translate(0, 0, -80);
-  let camX = map(mouseX, 0, width, -200, 200);
-  let camY = map(mouseY, 0, height, -200, 200);
+  let camX = map(mouseX, 0, width, -width, width);
+  let camY = map(mouseY, 0, height, -height, height);
   camera(camX, camY, (height / 2.0) / tan(PI * 30.0 / 180.0), 0, 0, 0, 0, 1, 0);
   //translate(width/2, height/2);
-  scale(5);
+  scale(10);
   stroke(255);
   noFill();
 
@@ -42,6 +42,7 @@ function draw() {
     stroke(hu, 255, 255);
     var r = 0.1
     // vertex(v.x, v.y, v.z);
+    strokeWeight(5)
     point(v.x, v.y, v.z);
     
     //PVector offset = PVector.random3D();
